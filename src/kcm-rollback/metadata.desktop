@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Snapshots & Rollback
+Name[es]=Snapshots y Rollback
+Comment=Manage BTRFS snapshots and system rollback
+Comment[es]=Gestiona snapshots BTRFS y restauración del sistema
+Icon=system-rollback
+Categories=Qt;KDE;System;
+Type=Service
+X-KDE-ParentComponents=kcm_rollback
+X-KDE-ConfigModule=kcm_rollback
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=AGPL-3.0
+X-KDE-PluginInfo-Name=kcm_rollback

@@ -1,0 +1,40 @@
+# Build temporal LFS (binarios compilados, no subir)
+lfs/
+lfs/*
+
+# Logs de build
+logs/
+
+# ccache cache
+.ccache/
+
+# Binarios compilados
+*.o
+*.a
+*.so
+*.la
+*.lo
+*.o.*
+target/
+build/
+
+# KCM rollback build output
+src/kcm-rollback/build/
+
+# Go binaries inside submodules (build artifacts)
+*.exe
+
+# ISO generada
+*.iso
+
+# Kernel build artifacts
+kernel/linux-*/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

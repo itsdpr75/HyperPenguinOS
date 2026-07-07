@@ -1,0 +1,17 @@
+set bell-style none
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+$if mode=emacs
+"\e[1~": beginning-of-line
+"\e[2~": overwrite-mode
+"\e[3~": delete-char
+"\e[4~": end-of-line
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+"\e[A": previous-history
+"\e[B": next-history
+"\e[C": forward-char
+"\e[D": backward-char
+$endif

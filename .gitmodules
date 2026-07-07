@@ -1,0 +1,6 @@
+[submodule "src/hbox"]
+	path = src/hbox
+	url = https://github.com/itsdpr75/hbox-indev
+[submodule "src/hpk"]
+	path = src/hpk
+	url = https://github.com/itsdpr75/HPK-indev

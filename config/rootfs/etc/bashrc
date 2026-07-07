@@ -1,0 +1,7 @@
+# System-wide bashrc
+shopt -s histappend
+shopt -s checkwinsize
+PS1='[\\u@\\h \\W]\\$ '
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'

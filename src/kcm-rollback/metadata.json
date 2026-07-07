@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Name": "Snapshots & Rollback",
+        "Description": "Gestiona snapshots BTRFS y restauración del sistema",
+        "Icon": "system-rollback",
+        "Category": "System",
+        "Authors": [
+            {
+                "Name": "HyperPenguinOS Team",
+                "Email": "dev@hyperpenguin.os"
+            }
+        ],
+        "License": "AGPL-3.0",
+        "Website": "https://github.com/hyperpenguin/hyperpenguinos",
+        "Version": "1.0",
+        "EnabledByDefault": true
+    },
+    "X-KDE-ParentComponents": ["kcm_rollback"],
+    "X-KDE-ConfigModule": "kcm_rollback",
+    "KPackageStructure": "KCM"
+}

@@ -1,0 +1,9 @@
+# /etc/fstab: static file system information
+# <file system>       <dir>        <type>  <options>             <dump> <pass>
+LABEL=hyperpenguin-root /            btrfs   subvol=@rootfs-A,ro   0      1
+LABEL=hyperpenguin-root /var         btrfs   subvol=@var,rw       0      2
+LABEL=hyperpenguin-root /.snapshots  btrfs   subvol=@snapshots,rw 0      2
+LABEL=hyperpenguin-esp  /boot/efi    vfat    rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 2
+tmpfs                   /tmp         tmpfs   rw,nosuid,nodev,noexec,relatime,size=2G 0 0
+tmpfs                   /run         tmpfs   rw,nosuid,nodev,relatime,mode=755        0 0
+devpts                  /dev/pts     devpts  gid=5,mode=620,ptmxmode=000              0 0

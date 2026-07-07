@@ -1,0 +1,15 @@
+# Shell scripts
+*.sh text eol=lf
+
+# Markdown docs
+*.md text eol=lf
+
+# Config files
+*.conf text eol=lf
+*.cfg text eol=lf
+
+# Patch files
+*.patch text eol=lf
+
+# Prevent git from messing with kernel config
+kernel/config/.config -diff -text
