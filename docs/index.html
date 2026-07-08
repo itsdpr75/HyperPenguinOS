@@ -391,20 +391,13 @@
       </div>
     </div>
 
-    <div class="arch-table-wrap">
-      <table class="arch-table">
-        <thead>
-          <tr><th>Subvolume</th><th>Mount</th><th>Type</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>&commat;rootfs-A</td><td>/</td><td>ro</td><td>Active system</td></tr>
-          <tr><td>&commat;rootfs-B</td><td>/</td><td>ro</td><td>Inactive (fallback/update target)</td></tr>
-          <tr><td>&commat;etc</td><td>/etc</td><td>rw</td><td>System configuration (snapshottable)</td></tr>
-          <tr><td>&commat;var</td><td>/var</td><td>rw</td><td>Logs, caches, variable data</td></tr>
-          <tr><td>&commat;user</td><td>/user</td><td>rw</td><td>User data and applications</td></tr>
-          <tr><td>&commat;snapshots</td><td>/.snapshots</td><td>rw</td><td>BTRFS snapshots for rollback</td></tr>
-        </tbody>
-      </table>
+    <div class="subvol-grid">
+      <div class="subvol-card"><span class="subvol-name">&commat;rootfs-A</span><span class="subvol-mount">/</span><span class="subvol-type">ro</span><span class="subvol-desc">Active system</span></div>
+      <div class="subvol-card"><span class="subvol-name">&commat;rootfs-B</span><span class="subvol-mount">/</span><span class="subvol-type">ro</span><span class="subvol-desc">Inactive (fallback / update target)</span></div>
+      <div class="subvol-card"><span class="subvol-name">&commat;etc</span><span class="subvol-mount">/etc</span><span class="subvol-type">rw</span><span class="subvol-desc">System configuration (snapshottable)</span></div>
+      <div class="subvol-card"><span class="subvol-name">&commat;var</span><span class="subvol-mount">/var</span><span class="subvol-type">rw</span><span class="subvol-desc">Logs, caches, variable data</span></div>
+      <div class="subvol-card"><span class="subvol-name">&commat;user</span><span class="subvol-mount">/user</span><span class="subvol-type">rw</span><span class="subvol-desc">User data and applications</span></div>
+      <div class="subvol-card"><span class="subvol-name">&commat;snapshots</span><span class="subvol-mount">/.snapshots</span><span class="subvol-type">rw</span><span class="subvol-desc">BTRFS snapshots for rollback</span></div>
     </div>
   </div>
 </section>

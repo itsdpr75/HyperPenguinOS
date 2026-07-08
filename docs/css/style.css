@@ -432,37 +432,44 @@ section {
   line-height: 1;
 }
 
-.arch-table-wrap {
-  overflow-x: auto;
+.subvol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
   margin-top: 28px;
 }
 
-.arch-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--radius);
-  overflow: hidden;
+.subvol-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
   font-size: 0.9rem;
 }
 
-.arch-table th, .arch-table td {
-  padding: 14px 18px;
-  text-align: left;
+.subvol-name {
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.95rem;
 }
 
-.arch-table th {
-  background: var(--bg-card);
-  font-weight: 600;
+.subvol-mount {
+  color: var(--text);
+}
+
+.subvol-type {
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
-.arch-table td { background: var(--bg-card); border-top: 1px solid var(--border); }
-.arch-table tr:first-child td { border-top: none; }
+.subvol-desc {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
 
 /* ============ TOOLS ============ */
 .tools-grid {
