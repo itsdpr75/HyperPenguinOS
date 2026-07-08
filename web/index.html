@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperPenguinOS — Linux, reinvented.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <i class="fa-brands fa-linux"></i> HyperPenguinOS
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#progress">Status</a></li>
+      <li><a href="#compare">Differences</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#tools">Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-icon"><i class="fa-brands fa-linux"></i></div>
+    <span class="hero-badge"><i class="fa-solid fa-cube" style="margin-right:6px"></i>Built from scratch with Linux From Scratch</span>
+    <h1>Linux, <span>reinvented.</span></h1>
+    <p>
+      An immutable, security-focused Linux distribution built entirely from source.
+      A/B atomic updates, a redesigned <code>/user/</code> filesystem, cross-distro containers,
+      and KDE Plasma 6 on Wayland — no package manager, no legacy.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="https://github.com/itsdpr75/HyperPenguinOS">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a class="btn btn-outline" href="#features">
+        <i class="fa-solid fa-circle-info"></i> Learn more
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD PROGRESS ============ -->
+<section id="progress" style="padding-top:0">
+  <div class="container">
+    <div class="progress-card">
+      <div class="progress-header">
+        <h2><i class="fa-solid fa-chart-simple" style="margin-right:10px;color:var(--accent)"></i>Build Progress</h2>
+        <span class="progress-label">9 of 15 phases &middot; 60%</span>
+      </div>
+      <div class="progress-bar-outer">
+        <div class="progress-bar-fill" style="width:60%"></div>
+      </div>
+
+      <div class="progress-columns">
+        <!-- COMPLETED -->
+        <div class="progress-group">
+          <h3><i class="fa-solid fa-check-circle" style="color:var(--green)"></i> Completed</h3>
+          <div class="progress-items">
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">01. Toolchain</div>
+                <div class="progress-item-desc">Cross-compilation toolchain: binutils, gcc (pass 1 &amp; 2), glibc, libstdc++</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">binutils 2.46</span>
+                  <span class="sub-tag done-tag">gcc 15.2.0</span>
+                  <span class="sub-tag done-tag">glibc 2.43</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">02. Base System LFS</div>
+                <div class="progress-item-desc">83 packages built inside chroot with checkpoint system</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">systemd 257.4</span>
+                  <span class="sub-tag done-tag">dbus 1.16.2</span>
+                  <span class="sub-tag done-tag">bash 5.3</span>
+                  <span class="sub-tag done-tag">btrfs-progs 6.19.1</span>
+                  <span class="sub-tag done-tag">dracut 111</span>
+                  <span class="sub-tag done-tag">kmod 34.2</span>
+                  <span class="sub-tag done-tag">e2fsprogs 1.47.3</span>
+                  <span class="sub-tag done-tag">util-linux 2.41.3</span>
+                  <span class="sub-tag done-tag">+75 more</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">03. Kernel 6.18 CachyOS</div>
+                <div class="progress-item-desc">Kernel with CachyOS misc patches, defconfig tuned for AMD Ryzen + AMDGPU + Btrfs</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">vmlinuz (21 MB)</span>
+                  <span class="sub-tag done-tag">initramfs (14 MB)</span>
+                  <span class="sub-tag done-tag">8 kernel modules</span>
+                  <span class="sub-tag done-tag">x86-64-v3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">04. A/B BTRFS System</div>
+                <div class="progress-item-desc">Atomic update / rollback scripts, first-boot setup service</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">penguin-update</span>
+                  <span class="sub-tag done-tag">penguin-rollback</span>
+                  <span class="sub-tag done-tag">penguin-firstboot</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">05. /user/ Filesystem</div>
+                <div class="progress-item-desc">Redesigned XDG paths, PAM with mkhomedir, default skel structure</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">XDG_CONFIG_HOME</span>
+                  <span class="sub-tag done-tag">pam_mkhomedir.so</span>
+                  <span class="sub-tag done-tag">/etc/skel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon done"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">06. Tools (hpk, hbox, KCM)</div>
+                <div class="progress-item-desc">Source code as git submodules, build scripts ready</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag done-tag">hpk (Go)</span>
+                  <span class="sub-tag done-tag">hbox (Go)</span>
+                  <span class="sub-tag done-tag">kcm-rollback (C++/QML)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PENDING -->
+        <div class="progress-group">
+          <h3><i class="fa-regular fa-circle" style="color:var(--gray)"></i> Pending</h3>
+          <div class="progress-items">
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">07. Wayland + Mesa</div>
+                <div class="progress-item-desc">Native Wayland graphics stack: libdrm, Mesa (radeonsi + swrast + vulkan), libinput</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">~1-2 h build</span>
+                  <span class="sub-tag">No XWayland</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">08. Qt6 6.7.2</div>
+                <div class="progress-item-desc">13 modules: qtbase, qtdeclarative, qtwayland, qtsvg, qtmultimedia, qttools, etc.</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">~6-10 h build</span>
+                  <span class="sub-tag">Checkpoints + ccache</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">09. KDE Frameworks 6</div>
+                <div class="progress-item-desc">~45 modules across 3 tiers (kcoreaddons, kio, kcmutils, etc.)</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">~2-3 h build</span>
+                  <span class="sub-tag">No khtml</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">10. KDE Plasma 6</div>
+                <div class="progress-item-desc">Plasma desktop, KWin, SDDM Wayland, systemsettings, dolphin, konsole, kate</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">~2-3 h build</span>
+                  <span class="sub-tag">No bluetooth</span>
+                  <span class="sub-tag">systemd-networkd</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">11. Calamares Installer</div>
+                <div class="progress-item-desc">Graphical installer with custom modules for A/B partitioning and /user/ setup</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">yaml-cpp</span>
+                  <span class="sub-tag">kpmcore</span>
+                  <span class="sub-tag">Boost (from host)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-item-icon pending"><i class="fa-regular fa-circle"></i></div>
+              <div class="progress-item-body">
+                <div class="progress-item-title">12. ISO Generation</div>
+                <div class="progress-item-desc">Squashfs rootfs + dracut dmsquash-live initramfs + GRUB BIOS/UEFI</div>
+                <div class="progress-item-sub">
+                  <span class="sub-tag">grub-mkrescue</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENCES ============ -->
+<section id="compare">
+  <div class="container">
+    <div class="section-header">
+      <i class="fa-solid fa-table"></i>
+      <h2>What makes it different</h2>
+      <p>HyperPenguinOS rethinks Linux from the ground up. No package manager, no <code>/home/</code>, no X11 legacy.</p>
+    </div>
+
+    <table class="compact-table">
+      <thead>
+        <tr><th>Area</th><th>Traditional Linux</th><th>HyperPenguinOS</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Package Management</td>
+          <td>apt, pacman, dnf, etc.</td>
+          <td>None native. AppImage, Flatpak, Linyaps via <strong>hpk</strong></td>
+        </tr>
+        <tr>
+          <td>Cross-distro apps</td>
+          <td>Not supported natively</td>
+          <td><strong>hbox</strong>: run .deb/.rpm in Podman containers, integrated into desktop</td>
+        </tr>
+        <tr>
+          <td>User filesystem</td>
+          <td><code>/home/{user}/</code> + <code>~/.config/</code> + <code>~/.local/</code></td>
+          <td>Everything under <code>/user/{user}/</code>: config/, home/, apps/</td>
+        </tr>
+        <tr>
+          <td>System updates</td>
+          <td>Package-by-package (risk of partial upgrades)</td>
+          <td><strong>Atomic A/B</strong>: whole-image updates, instant rollback</td>
+        </tr>
+        <tr>
+          <td>Immutability</td>
+          <td>Mutable root (unless explicitly configured)</td>
+          <td><code>/usr</code> and <code>/</code> read-only at runtime by default</td>
+        </tr>
+        <tr>
+          <td>Rollback</td>
+          <td>Manual snapshots or not available</td>
+          <td>Built-in KCM in Plasma System Settings, CLI script</td>
+        </tr>
+        <tr>
+          <td>Display server</td>
+          <td>X11 (legacy) + optional Wayland</td>
+          <td>Wayland native, no X11 (no XWayland in v1)</td>
+        </tr>
+        <tr>
+          <td>Bootloader</td>
+          <td>Single entry</td>
+          <td>Dual-entry with automatic fallback on failure</td>
+        </tr>
+        <tr>
+          <td>Build system</td>
+          <td>Binary packages from distro repos</td>
+          <td>Built entirely from source with LFS, checkpoint-based recovery</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <i class="fa-solid fa-star"></i>
+      <h2>Key features</h2>
+      <p>Every design decision serves one goal: a simpler, safer, more maintainable Linux.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Immutable A/B System</h3>
+        <p>Two root subvolumes (&commat;rootfs-A and &commat;rootfs-B). Updates write to the inactive side. If the new boot fails, GRUB automatically falls back. Atomic by design.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-folder-tree"></i></div>
+        <h3><code>/user/</code> Filesystem</h3>
+        <p>All user data unified under <code>/user/{username}/</code>: <code>config/</code>, <code>home/</code>, <code>apps/</code>. One directory to back up, one to migrate, no XDG scattering.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-cube"></i></div>
+        <h3>hpk — Unified App Manager</h3>
+        <p>Single CLI to install, search, run and remove AppImages, Flatpaks, Linyaps and containerized apps. Auto-detects format, integrates with KDE Discover.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <h3>hbox — Cross-Distro Containers</h3>
+        <p>Run Ubuntu, Fedora or Arch containers via Podman. Install .deb/.rpm packages inside and get .desktop files generated. Wayland, PulseAudio and GPU mounted automatically.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-rotate-left"></i></div>
+        <h3>KCM Rollback</h3>
+        <p>Native Plasma System Settings module to browse and restore BTRFS snapshots. Full integration with the A/B update mechanism for instant system recovery.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-display"></i></div>
+        <h3>Wayland Native</h3>
+        <p>KDE Plasma 6 on Wayland exclusively. No X11, no XWayland in v1. AMDGPU + Vulkan via Mesa. Cleaner, faster, and more secure display stack.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section id="architecture">
+  <div class="container">
+    <div class="section-header">
+      <i class="fa-solid fa-layer-group"></i>
+      <h2>Architecture</h2>
+      <p>From the kernel up to the desktop, every layer is built from source and designed for immutability.</p>
+    </div>
+
+    <div class="arch-diagram">
+<span class="arch-accent">+-------------------------------------------+</span>
+<span class="arch-accent">|</span>  <span class="arch-accent">KDE Plasma 6 (Wayland)</span>                    <span class="arch-accent">|</span>
+<span class="arch-accent">|</span>  SDDM, KWin, System Settings, KCM Rollback   <span class="arch-accent">|</span>
+<span class="arch-accent">+-------------------------------------------+</span>
+<span class="arch-accent">|</span>  <span class="arch-accent">hpk</span>  |  <span class="arch-accent">hbox</span>  |  Flatpak / AppImage              <span class="arch-accent">|</span>
+<span class="arch-accent">+-------------------------------------------+</span>
+<span class="arch-accent">|</span>  systemd  |  udev  |  D-Bus                     <span class="arch-accent">|</span>
+<span class="arch-accent">+-------------------------------------------+</span>
+<span class="arch-accent">|</span>  <span class="arch-accent">Kernel CachyOS</span> (x86-64-v3, misc patches)       <span class="arch-accent">|</span>
+<span class="arch-accent">+-------------------------------------------+</span>
+<span class="arch-accent">|</span>  BTRFS (A/B snapshots, compression, checksum) <span class="arch-accent">|</span>
+<span class="arch-accent">+-------------------------------------------+</span>
+    </div>
+
+    <div class="arch-table-wrap">
+      <table class="arch-table">
+        <thead>
+          <tr><th>Subvolume</th><th>Mount</th><th>Type</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>&commat;rootfs-A</td><td>/</td><td>ro</td><td>Active system</td></tr>
+          <tr><td>&commat;rootfs-B</td><td>/</td><td>ro</td><td>Inactive (fallback/update target)</td></tr>
+          <tr><td>&commat;etc</td><td>/etc</td><td>rw</td><td>System configuration (snapshottable)</td></tr>
+          <tr><td>&commat;var</td><td>/var</td><td>rw</td><td>Logs, caches, variable data</td></tr>
+          <tr><td>&commat;user</td><td>/user</td><td>rw</td><td>User data and applications</td></tr>
+          <tr><td>&commat;snapshots</td><td>/.snapshots</td><td>rw</td><td>BTRFS snapshots for rollback</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="tools">
+  <div class="container">
+    <div class="section-header">
+      <i class="fa-solid fa-terminal"></i>
+      <h2>Tools</h2>
+      <p>Two CLI tools and a Plasma module that replace an entire ecosystem of package managers.</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <i class="fa-solid fa-cube"></i>
+          <h3>hpk — HyperPenguin Kommander</h3>
+        </div>
+        <p>Unified application manager. Install anything from anywhere with one command — AppImage, Flatpak, Linyaps, or containerized via hbox.</p>
+        <div class="code-block">
+<span class="comment"># Auto-detect format</span>
+<span class="keyword">hpk</span> install firefox
+
+<span class="comment"># Force a format</span>
+<span class="keyword">hpk</span> install --flatpak org.gimp.GIMP
+<span class="keyword">hpk</span> install --box ubuntu firefox
+
+<span class="comment"># List, search, run</span>
+<span class="keyword">hpk</span> list
+<span class="keyword">hpk</span> search firefox
+<span class="keyword">hpk</span> run org.gimp.GIMP
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <h3>hbox — Cross-Distro Containers</h3>
+        </div>
+        <p>Run applications from other distributions inside Podman containers. Transparent desktop integration with generated .desktop files.</p>
+        <div class="code-block">
+<span class="comment"># Create containers</span>
+<span class="keyword">hbox</span> create ubuntu --image ubuntu:24.04
+<span class="keyword">hbox</span> create fedora --image fedora:40
+
+<span class="comment"># Install &amp; run apps</span>
+<span class="keyword">hbox</span> install ubuntu firefox
+<span class="keyword">hbox</span> run ubuntu firefox
+
+<span class="comment"># Search across all containers</span>
+<span class="keyword">hbox</span> search firefox
+        </div>
+      </div>
+
+      <div class="tool-card" style="grid-column: 1 / -1;">
+        <div class="tool-card-header">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h3>KCM Rollback</h3>
+        </div>
+        <p>A Plasma System Settings module that lists available BTRFS snapshots and lets you restore any of them with one click. Integrated with the A/B mechanism — snapshots are taken before each update and before each rollback, so you never lose the ability to go back.</p>
+        <div class="code-block">
+<span class="comment"># The equivalent CLI (penguin-rollback) also exists manually:</span>
+<span class="keyword">penguin-rollback</span>
+
+<span class="comment"># Lists snapshots, prompts for an ID, restores it,</span>
+<span class="comment"># backs up the current state automatically.</span>
+        </div>
+      </div>
+
+      <div class="tool-card" style="grid-column: 1 / -1;">
+        <div class="tool-card-header">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <h3>System Scripts</h3>
+        </div>
+        <p>Three CLI tools manage the A/B lifecycle:</p>
+        <div class="code-block">
+<span class="keyword">penguin-update</span>   <span class="comment"># Download + verify + apply atomic update to inactive partition</span>
+<span class="keyword">penguin-rollback</span> <span class="comment"># List + restore BTRFS snapshots with automatic backup</span>
+<span class="keyword">penguin-firstboot</span><span class="comment"># Initial setup: hostname, locales, GRUB, initial snapshot</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <ul class="footer-links">
+      <li><a href="https://github.com/itsdpr75/HyperPenguinOS" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+    </ul>
+    <p>Copyright &copy; 2026 HyperPenguinOS &middot; GNU Affero General Public License v3.0</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
