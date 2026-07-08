@@ -364,19 +364,31 @@
       <p>From the kernel up to the desktop, every layer is built from source and designed for immutability.</p>
     </div>
 
-    <div class="arch-diagram">
-<span class="arch-accent">+-------------------------------------------+</span>
-<span class="arch-accent">|</span>  <span class="arch-accent">KDE Plasma 6 (Wayland)</span>                    <span class="arch-accent">|</span>
-<span class="arch-accent">|</span>  SDDM, KWin, System Settings, KCM Rollback   <span class="arch-accent">|</span>
-<span class="arch-accent">+-------------------------------------------+</span>
-<span class="arch-accent">|</span>  <span class="arch-accent">hpk</span>  |  <span class="arch-accent">hbox</span>  |  Flatpak / AppImage              <span class="arch-accent">|</span>
-<span class="arch-accent">+-------------------------------------------+</span>
-<span class="arch-accent">|</span>  systemd  |  udev  |  D-Bus                     <span class="arch-accent">|</span>
-<span class="arch-accent">+-------------------------------------------+</span>
-<span class="arch-accent">|</span>  <span class="arch-accent">Kernel CachyOS</span> (x86-64-v3, misc patches)       <span class="arch-accent">|</span>
-<span class="arch-accent">+-------------------------------------------+</span>
-<span class="arch-accent">|</span>  BTRFS (A/B snapshots, compression, checksum) <span class="arch-accent">|</span>
-<span class="arch-accent">+-------------------------------------------+</span>
+    <div class="arch-layers">
+      <div class="arch-layer arch-layer-desktop">
+        <div class="arch-layer-title">KDE Plasma 6 (Wayland)</div>
+        <div class="arch-layer-desc">SDDM, KWin, System Settings, KCM Rollback</div>
+      </div>
+      <div class="arch-layer-arrow"><i class="fa-solid fa-angle-down"></i></div>
+      <div class="arch-layer arch-layer-apps">
+        <div class="arch-layer-title">hpk &middot; hbox &middot; Flatpak &middot; AppImage</div>
+        <div class="arch-layer-desc">Application management layer</div>
+      </div>
+      <div class="arch-layer-arrow"><i class="fa-solid fa-angle-down"></i></div>
+      <div class="arch-layer arch-layer-system">
+        <div class="arch-layer-title">systemd &middot; udev &middot; D-Bus</div>
+        <div class="arch-layer-desc">Init and service infrastructure</div>
+      </div>
+      <div class="arch-layer-arrow"><i class="fa-solid fa-angle-down"></i></div>
+      <div class="arch-layer arch-layer-kernel">
+        <div class="arch-layer-title">Kernel CachyOS</div>
+        <div class="arch-layer-desc">Linux 6.18.37 + misc patches &middot; x86-64-v3 &middot; AMDGPU &middot; Btrfs</div>
+      </div>
+      <div class="arch-layer-arrow"><i class="fa-solid fa-angle-down"></i></div>
+      <div class="arch-layer arch-layer-fs">
+        <div class="arch-layer-title">BTRFS</div>
+        <div class="arch-layer-desc">A/B snapshots &middot; compression &middot; checksum &middot; rollback</div>
+      </div>
     </div>
 
     <div class="arch-table-wrap">

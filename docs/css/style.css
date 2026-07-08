@@ -387,21 +387,50 @@ section {
 .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
 /* ============ ARCHITECTURE ============ */
-.arch-diagram {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+.arch-layers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.arch-layer {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px 32px;
   border-radius: var(--radius);
-  padding: 32px;
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.arch-layer-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.arch-layer-desc {
   font-size: 0.85rem;
-  line-height: 1.8;
-  white-space: pre;
-  overflow-x: auto;
   color: var(--text-muted);
 }
 
-.arch-diagram .arch-accent { color: var(--accent); }
-.arch-diagram .arch-dim { color: #555; }
+.arch-layer-desktop { background: rgba(108, 92, 231, 0.1); border-color: rgba(108, 92, 231, 0.3); }
+.arch-layer-desktop .arch-layer-title { color: #a78bfa; }
+.arch-layer-apps { background: rgba(0, 212, 170, 0.08); border-color: rgba(0, 212, 170, 0.25); }
+.arch-layer-apps .arch-layer-title { color: var(--accent); }
+.arch-layer-system { background: rgba(59, 130, 246, 0.08); border-color: rgba(59, 130, 246, 0.25); }
+.arch-layer-system .arch-layer-title { color: #60a5fa; }
+.arch-layer-kernel { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.25); }
+.arch-layer-kernel .arch-layer-title { color: #fbbf24; }
+.arch-layer-fs { background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.25); }
+.arch-layer-fs .arch-layer-title { color: #f87171; }
+
+.arch-layer-arrow {
+  color: var(--border);
+  font-size: 1rem;
+  padding: 6px 0;
+  line-height: 1;
+}
 
 .arch-table-wrap {
   overflow-x: auto;
