@@ -42,7 +42,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.9);
+  background: rgba(10, 10, 15, 0.6);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -430,6 +430,17 @@ section {
   font-size: 1rem;
   padding: 6px 0;
   line-height: 1;
+}
+
+.arch-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .arch-two-col { grid-template-columns: 1fr; }
 }
 
 .subvol-grid {
