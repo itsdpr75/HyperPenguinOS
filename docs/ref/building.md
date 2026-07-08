@@ -149,4 +149,4 @@ sudo rm -f /path/to/lfs/rootfs/usr/lib/opencode/installed/qtbase-everywhere-src-
 
 ## Personalización visual
 
-Después de tener la VM corriendo, ver `docs/plasma-theming.md`.
+Después de tener la VM corriendo, ver `docs/ref/plasma-theming.md`.
